@@ -7,55 +7,35 @@ int main()
 
     while(cin>>m>>n)
     {
+        int m1=m,n1=n;
+        if(m>n)
+        {
+            int temp=m;
+            m=n;
+            n=temp;
+        }
         cycle=0;
-        if(m<=n)
+        for(i=m; i<=n; i++)
         {
-            for(i=m; i<=n; i++)
+            j=i;
+            cnt=1;
+            while(j>1)
             {
-                j=i;
-                cnt=1;
-                while(j>1)
+                if(j%2!=0)
                 {
-                    if(j%2!=0)
-                    {
-                        j=3*j+1;
-                        cnt++;
-                    }
-                    else
-                    {
-                        j=j/2;
-                        cnt++;
-                    }
+                    j=3*j+1;
+                    cnt++;
                 }
-                if(cnt>cycle)
-                    cycle=cnt;
-            }
-
-        }
-        else
-        {
-            for(i=m; i>=n; i--)
-            {
-                j=i;
-                cnt=1;
-                while(j>1)
+                else
                 {
-                    if(j%2!=0)
-                    {
-                        j=3*j+1;
-                        cnt++;
-                    }
-                    else
-                    {
-                        j=j/2;
-                        cnt++;
-                    }
+                    j=j/2;
+                    cnt++;
                 }
-                if(cnt>cycle)
-                    cycle=cnt;
             }
+            if(cnt>cycle)
+                cycle=cnt;
         }
-        cout<<m<<" "<<n<<" "<<cycle<<endl;
+        cout<<m1<<" "<<n1<<" "<<cycle<<endl;
     }
 
     return 0;
