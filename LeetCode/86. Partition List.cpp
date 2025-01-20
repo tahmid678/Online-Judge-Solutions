@@ -15,6 +15,10 @@ public:
         queue<int> moreOrEqualX;
         ListNode* node = NULL;
 
+        if(!head){
+            return head;
+        }
+
         while (head) {
             if (head->val < x) {
                 lessX.push(head->val);
@@ -45,9 +49,7 @@ public:
             }
             moreOrEqualX.pop();
         }
-        if (head) {
-            node->next = NULL;
-        }
+        node->next = NULL;
         return head;
     }
 };
