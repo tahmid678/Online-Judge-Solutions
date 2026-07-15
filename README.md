@@ -1,5 +1,10 @@
 # LeetCode Solutions
 
+<img src="./__/images/50 Days Badge 2024.gif" width="250" alt="50 Days Badge - 2024">
+<img src="./__/images/100 Days Badge 2024.gif" width="250" alt="100 Days Badge - 2024">
+<img src="./__/images/50 Days Badge 2025.gif" width="250" alt="50 Days Badge - 2025">
+<img src="./__/images/100 Days Badge 2025.gif" width="250" alt="100 Days Badge - 2025">
+
 ## **[2126. Destroying Asteroids](https://leetcode.com/problems/destroying-asteroids/description/)**
 **Tags** : `Array`, `Sorting`, `Greedy`<br>
 **Languages** : `C++`, `Python`<br>
