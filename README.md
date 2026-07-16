@@ -44,3 +44,25 @@
 ## Complexity
 **Time Complexity** : `O(nlogn)` as sorting required<br>
 **Space Complexity** : `O(1)` as the sorting is in-place sorting
+
+
+<!------------------------------------------------------------------------------------------------------------------------------->
+
+## **[3867. Sum of GCD of Formed Pairs](https://leetcode.com/problems/sum-of-gcd-of-formed-pairs/description/)**
+
+**Tags** : `Simulation`, `Math`, `Sorting`, `Number Theory`<br>
+**Languages** : `C++`, `Python`<br>
+**Difficulty** : `Medium`
+
+## Recognition
+- A simple set of instructions leads to the solution.
+
+## Idea
+- Maintain a current max variable to compute prefix GCD of the list.
+- Sort the newly formed prefix GCD list.
+- Compute GCD of each pair consisting of each unpaired element from start and end of the list.
+- Add the computed GCDs and return.
+
+## Complexity 
+**Time Complexity** : `O(nlogn + nlogN)` where `N` is the largest number in the list.<br>
+**Space Complexiity** : `O(n)` for prefix GCD list.
