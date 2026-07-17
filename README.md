@@ -66,3 +66,25 @@
 ## Complexity 
 **Time Complexity** : `O(nlogn + nlogN)` where `N` is the largest number in the list.<br>
 **Space Complexiity** : `O(n)` for prefix GCD list.
+
+<!------------------------------------------------------------------------------------------------------------------------------->
+
+## **[3974. Maximum Total Sum of K Selected Elements](https://leetcode.com/problems/maximum-total-sum-of-k-selected-elements/description/?envType=problem-list-v2&envId=greedy)**
+
+**Tags** : `Greedy`, `Sorting`<br>
+**Languages** : `C++`, `Python`<br>
+**Difficulty** : `Medium`
+
+## Recognition
+- Compute maximum possible sum by choosing values independently from the list.
+- Hence, it can be achieved by greedy alogorithm.
+
+## Idea
+- Sort the list.
+- Choose the last `k` elements of the list as they are the largest by values. Hence, they produce largest value when multiplied.
+- Anything muliplied with values less than 1 will produce 0 or negative values. So, multiplier should be `max(1, mul)`.
+- Add all the multiplied values and return.
+
+## Complexity
+**Time Complexity** : `O(nlogn)` for sorting the list<br>
+**Space Complexity** : `O(1)` as the sorting is an in-place sorting
