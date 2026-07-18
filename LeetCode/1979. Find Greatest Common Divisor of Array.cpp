@@ -1,19 +1,15 @@
 class Solution {
 private:
-    int maxNum = INT_MIN;
     int minNum = INT_MAX;
+    int maxNum = INT_MIN;
 
 public:
     int findGCD(vector<int>& nums) {
         for (int num : nums) {
-            this->maxNum = max(this->maxNum, num);
-            this->minNum = min(this->minNum, num);
+            minNum = min(num, minNum);
+            maxNum = max(num, maxNum);
         }
 
-        while (this->maxNum && this->minNum) {
-            this->maxNum %= this->minNum;
-            swap(this->maxNum, this->minNum);
-        }
-        return this->maxNum;
+        return gcd(minNum, maxNum);
     }
 };
