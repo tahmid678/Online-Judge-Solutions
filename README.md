@@ -88,3 +88,22 @@
 ## Complexity
 **Time Complexity** : `O(nlogn)` for sorting the list<br>
 **Space Complexity** : `O(1)` as the sorting is an in-place sorting
+
+<!------------------------------------------------------------------------------------------------------------------------------>
+
+## **[1979. Find Greatest Common Divisor of Array](https://leetcode.com/problems/find-greatest-common-divisor-of-array/description/)**
+
+**Tags** : `Array`, `Math`<br>
+**Languages** : `C++`, `Python`<br>
+**Difficulty** : `Easy`
+
+## Recognition
+- Find the `GCD` (Greatest Common Divisor). So, it's a math problem.
+
+## Idea
+- Find the `minimum` and `maximum` number of the array.
+- Compute the `GCD` of these two numbers.
+
+## Complexity
+**Time Complexity** : `O(n + logM)` where `n` is the array size and `M` is the largest number of the array.<br>
+**Space Complexity** : `O(1)` as no extra space is required.
