@@ -1,22 +1,18 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int i, j;
-        bool found = false;
-        vector<int> sol;
-        for(i=0; i<nums.size(); i++){
-            for(j=i+1; j<nums.size(); j++){
-                if(nums[i]+nums[j]==target){
-                    sol.push_back(i);
-                    sol.push_back(j);
-                    found = true;
-                    break;
-                }
+        vector<int> indices(2);
+        map<int, int> numExists;
+
+        for (int i = 0; i < nums.size(); i++) {
+            if (numExists[target - nums[i]] != 0) {
+                indices[0] = i;
+                indices[1] = --numExists[target - nums[i]];
+                return indices;
             }
-            if(found == true){
-                break;
-            }
+            numExists[nums[i]] = i + 1;
         }
-        return sol;
+
+        return indices;
     }
 };
