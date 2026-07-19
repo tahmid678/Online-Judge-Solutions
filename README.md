@@ -107,3 +107,24 @@
 ## Complexity
 **Time Complexity** : `O(n + logM)` where `n` is the array size and `M` is the largest number of the array.<br>
 **Space Complexity** : `O(1)` as no extra space is required.
+
+<!------------------------------------------------------------------------------------------------------------------------------>
+
+## **[1. Two Sum](https://leetcode.com/problems/two-sum/description/)**
+
+**Tags** : `Array`, `Hash Table`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Easy`
+
+## Recognition
+- Iterate through the list and locate the indices of two numbers that satify the condition.
+- One pass solution is possible by keeping a hash table.
+
+## Idea
+- Initialize a map that stores the `values` and `indices`.
+- Iterate through the list and look for whether `target - currentValue` exists in the map.
+- If so, then the indices of the `currentValue` and `target - currentValue` are the result.
+
+## Complexity
+**Time Complexity** : `O(nlogn)` as iterating through the list takes `O(n)` time and storing in a map takes `O(logn)` time. Time complexity could be reduced to `O(n)` by using `unordered_map` as it does not sort the `key` while storing elements.<br>
+**Space Complexity** : `O(n)` as extra map is required for storing the numbers of the list.
