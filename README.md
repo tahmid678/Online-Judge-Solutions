@@ -128,3 +128,23 @@
 ## Complexity
 **Time Complexity** : `O(nlogn)` as iterating through the list takes `O(n)` time and storing in a map takes `O(logn)` time. Time complexity could be reduced to `O(n)` by using `unordered_map` as it does not sort the `key` while storing elements.<br>
 **Space Complexity** : `O(n)` as extra map is required for storing the numbers of the list.
+
+<!------------------------------------------------------------------------------------------------------------------------------>
+
+## **[3536. Maximum Product of Two Digits](https://leetcode.com/problems/maximum-product-of-two-digits/description/)**
+
+**Tags** : `Math`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Easy`
+
+## Intuition
+- Need to extract digits out of the given number. So, it's a math problem.
+
+## Idea
+- Need to track the two largest digits of the number.
+- Initialize two variables for this.
+- Once whole iteration is complete, return the multiplication of these two digits.
+
+## Complexity
+**Time Complexity** : `O(logn)` as it takes `logn` time to reduce the number to `0` given the number is `n`.<br>
+**Space Complexity** : `O(1)` as no extra storage is needed.
