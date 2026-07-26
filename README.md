@@ -148,3 +148,23 @@
 ## Complexity
 **Time Complexity** : `O(logn)` as it takes `logn` time to reduce the number to `0` given the number is `n`.<br>
 **Space Complexity** : `O(1)` as no extra storage is needed.
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+## **[628. Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)**
+
+**Tags** : `Array`, `Math`, `Greedy`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Easy`
+
+## Intuition
+- Need to find the numbers that multiplication is maximum. So, it's a math as well as a greedy problem.
+
+## Idea
+- Find the greatest three possible numbers for maximizing the multiplication.
+- Also find the least two possible numbers as they can also yield to maximizing the multiplication.
+- Return max of multiplication of the greatest three numbers and least two numbers with the greatest number of the array.
+
+## Complexity
+**Time Complexity** : `O(n)` as the whole array traversal is needed.<br>
+**Space Complexity** : `O(1)` as no extra memory is needed.
