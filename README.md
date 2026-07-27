@@ -168,3 +168,22 @@
 ## Complexity
 **Time Complexity** : `O(n)` as the whole array traversal is needed.<br>
 **Space Complexity** : `O(1)` as no extra memory is needed.
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+
+## **[1464. Maximum Product of Two Elements in an Array](https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/description/)**
+
+**Tags** : `Array`, `Math`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Easy`
+
+## Intuition
+- Need to find two biggest numbers of the array. Only these two number can maximize the product.
+
+## Idea
+- Find the two greatest numbers of the array.
+- Return as the statment says.
+
+## Complexity
+**Time Complexity** : `O(n)` as the whole array traversal is needed.<br>
+**Space Complexity** : `O(1)` as no extra space is needed.
