@@ -187,3 +187,27 @@
 ## Complexity
 **Time Complexity** : `O(n)` as the whole array traversal is needed.<br>
 **Space Complexity** : `O(1)` as no extra space is needed.
+
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+## **[3517. Smallest Palindromic Rearrangement I](https://leetcode.com/problems/smallest-palindromic-rearrangement-i/description/)**
+
+**Tags** : `String`, `Counting Sort`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Medium`
+
+## Intuition
+- Count the characters of the string and distribute uniformly to the both sides of the given string.
+- Maintain the lexicographical order while distributing characters.
+
+## Idea
+- Initialize a `vector` of `int` to store the character's occurrences.
+- Initialize `left` and `right` variables to track the front and rear part of the string.
+- Distribute the characters uniformly to the both sides of the string.
+- There would be a character with an odd occurrence if the original string length is odd.
+- In that case, put this extra character in the middle of the string.
+
+## Complexity
+**Time Complexity** : `O(n)` as the whole string traversal is needed and `n` is the size of the string.<br>
+**Space Complexity** : `O(1)` as the space required is only a vector of size 26 which is independent to the size of the string.
