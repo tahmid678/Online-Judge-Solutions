@@ -211,3 +211,22 @@
 ## Complexity
 **Time Complexity** : `O(n)` as the whole string traversal is needed and `n` is the size of the string.<br>
 **Space Complexity** : `O(1)` as the space required is only a vector of size 26 which is independent to the size of the string.
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+## **[3014. Minimum Number of Pushes to Type Word I](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/description/)**
+
+**Tags** : `String`, `Greedy`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Easy`
+
+## Intuition
+- Assign the most frequent letters to the first position of the keypads. However, here all the letters are distinct, so it is not needed here.
+
+## Idea
+- Once the a whole group of letters is completed, increase the `push` number to `push + 1`.
+- To check whether a group of letters is completed, check whether `i % 8 == 0` where `i` is the position of the letter in the string.
+
+## Complexity
+**Time Complxity** : `O(n)` as the whole string with the length of `n` needs to be traversed.<br>
+**Space Complexity** : `O(1)` as no extra space is required.
