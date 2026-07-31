@@ -1,29 +1,22 @@
 class Solution {
 public:
     int minimumPushes(string word) {
-        map<char, int> charFrequency;
-        vector<int> frequency;
-        long long minPush = 0;
+        vector<int> letterFreqs(26, 0);
+        int pushCount = 0;
+        int push = 1;
 
-        for (int i = 0; i < word.size(); i++) {
-            charFrequency[word[i]]++;
-        }
-        for (auto x : charFrequency) {
-            frequency.push_back(x.second);
+        for (char c : word) {
+            letterFreqs[c - 'a']++;
         }
 
-        sort(frequency.begin(), frequency.end(), greater<int>());
-        for (int i = 0; i < frequency.size(); i++) {
-            if (i <= 7) {
-                minPush += frequency[i] * 1;
-            } else if (i <= 15) {
-                minPush += frequency[i] * 2;
-            } else if (i <= 23) {
-                minPush += frequency[i] * 3;
-            } else {
-                minPush += frequency[i] * 4;
+        sort(letterFreqs.begin(), letterFreqs.end(), greater<>());
+        for (int i = 0; i < 26; i++) {
+            pushCount += letterFreqs[i] * push;
+            if ((i + 1) % 8 == 0) {
+                push++;
             }
         }
-        return minPush;
+
+        return pushCount;
     }
 };
