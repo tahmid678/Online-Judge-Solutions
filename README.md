@@ -230,3 +230,24 @@
 ## Complexity
 **Time Complxity** : `O(n)` as the whole string with the length of `n` needs to be traversed.<br>
 **Space Complexity** : `O(1)` as no extra space is required.
+
+<!--------------------------------------------------------------------------------------------------------------------------->
+
+## **[3016. Minimum Number of Pushes to Type Word II](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii/description/)**
+
+**Tags** : `String`, `Greedy`, `Sorting`, `Counting`<br>
+**Languages** : `C++`, `Python`, `TypeScript`<br>
+**Difficulty** : `Medium`
+
+## Intuition
+- Assign the most frequent letters first to any keys. Hence, the number of required pushes is minimized.
+
+## Idea
+- Track the frequency of the letters in the word.
+- Sort these numbers in decreasing form.
+- Divide these numbers in a group of eight.
+- First group of numbers required `1` push, the second group of numbers required `2` pushes and so on.
+
+## Complexity
+**Time Complexity** : `O(nlogn)` as sorting is required.<br>
+**Space Complexity** : `O(1)` as no extra space is required. A list of size `26` is required and it's a fixed size.
