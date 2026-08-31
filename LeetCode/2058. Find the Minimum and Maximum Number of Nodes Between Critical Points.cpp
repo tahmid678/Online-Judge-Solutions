@@ -11,36 +11,51 @@
 class Solution {
 public:
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
-        vector<int> points;
-        vector<int> distance = {-1, -1};
-        ListNode* temp = head;
-        int last = temp->val, mid, next;
-        int pos = 1;
-        temp = temp->next;
-        while (temp->next != NULL) {
-            pos++;
-            mid = temp->val;
-            next = temp->next->val;
-            if (mid > last && mid > next) {
-                points.push_back(pos);
-            } else if (mid < last && mid < next) {
-                points.push_back(pos);
-            }
-            last = mid;
-            temp = temp->next;
-        }
+        vector<int> result = {-1, -1};
+        int firstCritical = 0;
+        int currentCritical = 0;
+        int previousCritical = 0;
+        int minDistance = INT_MAX;
+        int i = 2;
 
-        if (points.size() >= 2) {
-            sort(points.begin(), points.end());
-            int min = INT_MAX;
-            for (int i = 0; i < points.size() - 1; i++) {
-                if (min > abs(points[i] - points[i + 1])) {
-                    min = abs(points[i] - points[i + 1]);
+        ListNode* prev = head;
+        ListNode* current = head->next;
+        ListNode* next = current->next;
+
+        while (next) {
+            if (current->val > prev->val && current->val > next->val) {
+                if (!firstCritical) {
+                    firstCritical = i;
+                    previousCritical = i;
+
+                } else {
+                    currentCritical = i;
+                    minDistance =
+                        min(minDistance, currentCritical - previousCritical);
+                    previousCritical = currentCritical;
+                }
+            } else if (current->val < prev->val && current->val < next->val) {
+                if (!firstCritical) {
+                    firstCritical = i;
+                    previousCritical = i;
+                } else {
+                    currentCritical = i;
+                    minDistance =
+                        min(minDistance, currentCritical - previousCritical);
+                    previousCritical = currentCritical;
                 }
             }
-            distance[0] = min;
-            distance[1] = points[points.size() - 1] - points[0];
+            i++;
+            prev = current;
+            current = next;
+            next = next->next;
         }
-        return distance;
+
+        if (currentCritical) {
+            result[0] = minDistance;
+            result[1] = currentCritical - firstCritical;
+        }
+
+        return result;
     }
 };
