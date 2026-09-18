@@ -1,19 +1,21 @@
 class Solution {
 public:
     vector<int> sortArrayByParity(vector<int>& nums) {
-        vector<int> sortedArray;
-        stack<int> oddNums;
+        int evenIndex = 0;
+        int oddIndex = nums.size() - 1;
 
-        for (int num : nums) {
-            if (num & 1)
-                oddNums.push(num);
-            else
-                sortedArray.push_back(num);
+        while (evenIndex <= oddIndex) {
+            if (nums[evenIndex] % 2 == 1 && nums[oddIndex] % 2 == 0) {
+                swap(nums[evenIndex], nums[oddIndex]);
+                evenIndex++;
+                oddIndex--;
+            } else if (nums[evenIndex] % 2 == 0) {
+                evenIndex++;
+            } else if (nums[oddIndex] % 2 == 1) {
+                oddIndex--;
+            }
         }
-        while (!oddNums.empty()) {
-            sortedArray.push_back(oddNums.top());
-            oddNums.pop();
-        }
-        return sortedArray;
+
+        return nums;
     }
 };
